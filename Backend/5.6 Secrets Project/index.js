@@ -15,11 +15,11 @@ app.get("/",async(req,res)=>{
         const result= await axios.get("https://secrets-api.appbrewery.com/random");
 
         res.render("index.ejs",{
-            secrete: result.data.secrete,
+            secret: result.data.secret,
             user: result.data.username,
         });
     }catch(err){
-        console.log(err.response.data);
+        console.log(err.response.data);  //an error message that will come from the api 
         res.status(500);
     }
 });
